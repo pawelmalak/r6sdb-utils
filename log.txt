@@ -1,0 +1,11 @@
+commit 9d7cee0623d0c855ff7c6bcc645717dc34aee9e3
+Author: unknown <pawel999@icloud.com>
+Date:   Mon Aug 26 01:02:29 2019 +0200
+
+    Progress
+
+commit 6a53a7f45d28786a17bf1d806ba00d20eb0bc717
+Author: unknown <pawel999@icloud.com>
+Date:   Mon Aug 26 00:25:47 2019 +0200
+
+    Inital commit

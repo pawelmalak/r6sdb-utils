@@ -8,12 +8,11 @@ mouse = MouseController()
 def take_screenshot():
   time.sleep(5)
 
-  for i in range (0, 10):
-    # keyboard.press(Key.f12)
-    # mouse.position = (1798, 549)
-    # mouse.position = (1779, 569)
-    mouse.position = (627, 295)
+  for i in range (0, 165):
+    keyboard.press(Key.f12)
+    mouse.position = (1800, 552)
     mouse.press(Button.left)
+    time.sleep(0.1)
     mouse.release(Button.left)
     time.sleep(1)
 
