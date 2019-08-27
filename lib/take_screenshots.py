@@ -5,9 +5,6 @@ from pynput.mouse import Button, Controller as MouseController
 keyboard = KeyboardController()
 mouse = MouseController()
 
-items = input("Number of items: ")
-delay = input("Delay between shoots (1.75 for charms, 1 for rest): ")
-
 def take_screenshots(items, delay):
 
   # Delay to change active window to the game
