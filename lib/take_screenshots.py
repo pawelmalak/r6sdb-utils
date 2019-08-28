@@ -11,19 +11,12 @@ def take_screenshots(items, delay):
   time.sleep(5)
 
   for i in range (0, items):
+    # Make screenshot
     keyboard.press(Key.f12)
+    # Move to the next item
     mouse.position = (1800, 552)
     mouse.press(Button.left)
     time.sleep(0.1)
     mouse.release(Button.left)
+    # Wait for item to load
     time.sleep(delay)
-
-
-# charms
-# take_screenshots(1090, 4.0)
-
-# skins
-# take_screenshots(161, 1.25)
-
-# uniforms and headgears
-# take_screenshots(18, 2)
