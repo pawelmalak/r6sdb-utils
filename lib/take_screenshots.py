@@ -18,4 +18,12 @@ def take_screenshots(items, delay):
     mouse.release(Button.left)
     time.sleep(delay)
 
-take_screenshots(items, delay)
+
+# charms
+# take_screenshots(1090, 4.0)
+
+# skins
+# take_screenshots(161, 1.25)
+
+# uniforms and headgears
+# take_screenshots(18, 2)

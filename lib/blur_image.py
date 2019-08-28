@@ -1,8 +1,10 @@
+import os
 from PIL import Image, ImageFilter
 
-def blur_image():
+def blur_image(images_dir_path, image_path):
+
   # open image
-  image = Image.open("image.jpg")
+  image = Image.open(os.path.join(images_dir_path, image_path))
 
   # crop user id
   cropped_image = image.crop((1396, 283, 1838, 305))
@@ -22,5 +24,5 @@ def blur_image():
   # paste blurred image into the original one
   image.paste(blurred_image, (1370, 60, 1431, 115))
 
-  # show image
-  image.save('test.jpg')
+  # save image
+  image.save(os.path.join(os.getcwd(), 'output', image_path))
