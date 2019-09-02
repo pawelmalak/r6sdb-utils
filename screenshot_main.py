@@ -1,6 +1,6 @@
 from lib.take_screenshots import take_screenshots
 
-type_of_items = input("Type of items (charms, skins, uniforms, headgears): ")
+type_of_items = input("Type of items (charms [c], skins [s], uniforms [u], headgears [h]): ")
 number_of_items = input("Number of items: ")
 
 if (type_of_items == 'charms' or type_of_items == 'c'):

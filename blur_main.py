@@ -2,6 +2,26 @@ import os
 import time
 from lib.blur_image import blur_image
 
+def scan_and_blur(path):
+  instances = os.listdir(path)
+
+  # Check if output directory exists. Create if not
+  if (not os.path.isdir(path.replace('input', 'output'))):
+    os.mkdir(path.replace('input', 'output'))
+
+  for index, instance in enumerate(instances, start = 1):
+    instance_path = os.path.join(path, instance)
+
+    if (os.path.isfile(instance_path)):
+      image_input = instance_path
+      image_output = instance_path.replace('input', 'output')
+      blur_image(image_input, image_output)
+      print(instance, 'done', '|||', len(instances) - index, 'left')
+    
+    elif (os.path.isdir(instance_path)):
+      print(instance_path)
+      scan_and_blur(instance_path)
+
 # Execution time: Start
 start = time.time()
 
@@ -15,22 +35,14 @@ if (not os.path.isdir(images_input_path)):
   print('No images found. Please put them into /input directory and run script again')
 
 else:
-  # Check if /output directory exists. Create if not
-  if (not os.path.isdir(images_output_path)):
-    os.mkdir(images_output_path)
-
   # Get all list of all images in /input directory
-  images = os.listdir(images_input_path)
+  dir_instances = os.listdir(images_input_path)
 
-  if (len(images) == 0):
+  if (len(dir_instances) == 0):
     print('No images found. Please put them into /input directory and run script again')
 
-  # Blur every image
-  for index, image in enumerate(images, start = 1):
-    image_input = os.path.join(images_input_path, image)
-    image_output = os.path.join(images_output_path, image)
-    blur_image(image_input, image_output)
-    print(image, 'done', '|||', len(images) - index, 'left')
+  else:
+    scan_and_blur(images_input_path)
 
 # Execution time: End
 end = time.time()
