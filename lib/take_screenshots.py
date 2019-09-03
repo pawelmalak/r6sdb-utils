@@ -13,6 +13,7 @@ def take_screenshots(items, delay):
   for i in range (0, items):
     # Make screenshot
     keyboard.press(Key.f12)
+    print(items - i, 'left')
     # Move to the next item
     mouse.position = (1800, 552)
     mouse.press(Button.left)
