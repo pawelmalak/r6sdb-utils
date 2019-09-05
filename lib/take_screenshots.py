@@ -5,7 +5,7 @@ from pynput.mouse import Button, Controller as MouseController
 keyboard = KeyboardController()
 mouse = MouseController()
 
-def take_screenshots(items, delay):
+def take_screenshots(items, delay, verbose = False):
 
   # Delay to change active window to the game
   time.sleep(5)
@@ -13,7 +13,9 @@ def take_screenshots(items, delay):
   for i in range (0, items):
     # Make screenshot
     keyboard.press(Key.f12)
-    print(items - i, 'left')
+    # Print number of screenshots left
+    if verbose:
+      print(items - i, 'left')
     # Move to the next item
     mouse.position = (1800, 552)
     mouse.press(Button.left)
