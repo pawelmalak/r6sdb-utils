@@ -13,13 +13,16 @@ def take_screenshots(items, delay, verbose = False):
   for i in range (0, items):
     # Make screenshot
     keyboard.press(Key.f12)
+
     # Print number of screenshots left
     if verbose:
       print(items - i, 'left')
+
     # Move to the next item
     mouse.position = (1800, 552)
     mouse.press(Button.left)
     time.sleep(0.1)
     mouse.release(Button.left)
+    
     # Wait for item to load
     time.sleep(delay)
