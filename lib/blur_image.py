@@ -7,13 +7,13 @@ def blur_image(image_input_path, image_output_path):
   image = Image.open(image_input_path)
 
   # crop user id
-  cropped_image = image.crop((1396, 283, 1838, 305))
+  # cropped_image = image.crop((1396, 283, 1838, 305))
 
   # blur user id
-  blurred_image = cropped_image.filter(ImageFilter.GaussianBlur(radius = 10))
+  # blurred_image = cropped_image.filter(ImageFilter.GaussianBlur(radius = 10))
 
   # paste blurred image into the original one
-  image.paste(blurred_image, (1396, 283, 1838, 305))
+  # image.paste(blurred_image, (1396, 283, 1838, 305))
 
   # crop user avatar
   cropped_image = image.crop((1370, 60, 1431, 115))
